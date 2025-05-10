@@ -30,9 +30,26 @@ final class APIClient: APIClientProtocol {
         let urlRequest = URLRequest(url: urlComponent!.url!)
         
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            let dataModel = try! JSONDecoder().decode(CharacterDataContainer.self, from: data!)
+            guard let dataModel = try? JSONDecoder().decode(CharacterDataContainer.self, from: data!) else {
+                print("El endpoint no va")
+                if let data = self.loadBackupData(named: "PageOneHeroes") {
+                    let model = try! JSONDecoder().decode(CharacterDataContainer.self, from: data)
+                    completionBlock(model)
+                    print(model)
+                }
+                return
+            }
             completionBlock(dataModel)
             print(dataModel)
         }.resume()
+    }
+
+    func loadBackupData(named filename: String) -> Data?  {
+        guard let mockJson = Bundle.main.url(forResource: filename, withExtension: "json") else {
+            print("Problema con el json")
+            return nil
+        }
+
+        return try? Data(contentsOf: mockJson)
     }
 }
