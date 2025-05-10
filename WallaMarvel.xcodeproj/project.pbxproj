@@ -27,6 +27,12 @@
 		1A821ED82863081A0024D397 /* MarvelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A821ED72863081A0024D397 /* MarvelRepository.swift */; };
 		1A821EDA2863096C0024D397 /* ListHeroesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A821ED92863096C0024D397 /* ListHeroesPresenter.swift */; };
 		1AC0347F2863214900E93178 /* GetHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC0347E2863214900E93178 /* GetHeroes.swift */; };
+		DE74969B2DCF32580022F9EF /* PageOneHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE74969A2DCF32580022F9EF /* PageOneHeroes.json */; };
+		DE74969C2DCF32580022F9EF /* FilteredPageHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE7496992DCF32580022F9EF /* FilteredPageHeroes.json */; };
+		DE74969D2DCF32580022F9EF /* PageOneHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE74969A2DCF32580022F9EF /* PageOneHeroes.json */; };
+		DE74969E2DCF32580022F9EF /* FilteredPageHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE7496992DCF32580022F9EF /* FilteredPageHeroes.json */; };
+		DE74969F2DCF32580022F9EF /* PageOneHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE74969A2DCF32580022F9EF /* PageOneHeroes.json */; };
+		DE7496A02DCF32580022F9EF /* FilteredPageHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE7496992DCF32580022F9EF /* FilteredPageHeroes.json */; };
 		DEFDC63F2DCE977F00881EA3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DEFDC63E2DCE977F00881EA3 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +78,8 @@
 		1A821ED72863081A0024D397 /* MarvelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRepository.swift; sourceTree = "<group>"; };
 		1A821ED92863096C0024D397 /* ListHeroesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeroesPresenter.swift; sourceTree = "<group>"; };
 		1AC0347E2863214900E93178 /* GetHeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroes.swift; sourceTree = "<group>"; };
+		DE7496992DCF32580022F9EF /* FilteredPageHeroes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FilteredPageHeroes.json; sourceTree = "<group>"; };
+		DE74969A2DCF32580022F9EF /* PageOneHeroes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PageOneHeroes.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 		1A0E3A8C2862F7E200132FCB = {
 			isa = PBXGroup;
 			children = (
+				DE7496972DCF31210022F9EF /* Resources */,
 				1A0E3A972862F7E200132FCB /* WallaMarvel */,
 				1A0E3AAE2862F7E300132FCB /* WallaMarvelTests */,
 				1A0E3AB82862F7E300132FCB /* WallaMarvelUITests */,
@@ -218,6 +227,23 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		DE7496972DCF31210022F9EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE7496982DCF312A0022F9EF /* Data */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DE7496982DCF312A0022F9EF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DE7496992DCF32580022F9EF /* FilteredPageHeroes.json */,
+				DE74969A2DCF32580022F9EF /* PageOneHeroes.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,6 +351,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE74969D2DCF32580022F9EF /* PageOneHeroes.json in Resources */,
+				DE74969E2DCF32580022F9EF /* FilteredPageHeroes.json in Resources */,
 				1A0E3AA52862F7E300132FCB /* LaunchScreen.storyboard in Resources */,
 				1A0E3AA22862F7E300132FCB /* Assets.xcassets in Resources */,
 			);
@@ -334,6 +362,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE74969B2DCF32580022F9EF /* PageOneHeroes.json in Resources */,
+				DE74969C2DCF32580022F9EF /* FilteredPageHeroes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +371,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE74969F2DCF32580022F9EF /* PageOneHeroes.json in Resources */,
+				DE7496A02DCF32580022F9EF /* FilteredPageHeroes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
