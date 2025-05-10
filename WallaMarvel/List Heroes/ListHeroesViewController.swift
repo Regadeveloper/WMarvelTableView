@@ -5,7 +5,9 @@ final class ListHeroesViewController: UIViewController {
     
     var presenter: ListHeroesPresenterProtocol?
     var listHeroesProvider: ListHeroesAdapter?
-    
+
+    var isLoading: Bool = true
+
     override func loadView() {
         view = ListHeroesView()
     }
@@ -13,7 +15,7 @@ final class ListHeroesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         listHeroesProvider = ListHeroesAdapter(tableView: mainView.heroesTableView)
-        presenter?.getHeroes()
+        presenter?.getHeroes(offset: 0)
         presenter?.ui = self
         
         title = presenter?.screenTitle()
@@ -24,7 +26,8 @@ final class ListHeroesViewController: UIViewController {
 
 extension ListHeroesViewController: ListHeroesUI {
     func update(heroes: [CharacterDataModel]) {
-        listHeroesProvider?.heroes = heroes
+        isLoading = false
+        listHeroesProvider?.heroes += heroes
     }
 }
 
@@ -35,6 +38,18 @@ extension ListHeroesViewController: UITableViewDelegate {
         listHeroesViewController.presenter = presenter
         
         navigationController?.pushViewController(listHeroesViewController, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if isLoading {
+            return
+        }
+        let lastItem = listHeroesProvider?.heroes.count ?? 0
+        let lastItemRow = lastItem == 0 ? 1 : lastItem - 1
+        if indexPath.row == lastItemRow {
+            isLoading = true
+            presenter?.getHeroes(offset: lastItem)
+        }
     }
 }
 

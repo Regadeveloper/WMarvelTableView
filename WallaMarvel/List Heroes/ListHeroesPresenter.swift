@@ -3,7 +3,7 @@ import Foundation
 protocol ListHeroesPresenterProtocol: AnyObject {
     var ui: ListHeroesUI? { get set }
     func screenTitle() -> String
-    func getHeroes()
+    func getHeroes(offset: Int)
 }
 
 protocol ListHeroesUI: AnyObject {
@@ -24,8 +24,8 @@ final class ListHeroesPresenter: ListHeroesPresenterProtocol {
     
     // MARK: UseCases
     
-    func getHeroes() {
-        getHeroesUseCase.execute { characterDataContainer in
+    func getHeroes(offset: Int) {
+        getHeroesUseCase.execute(offset: offset) { characterDataContainer in
             print("Characters \(characterDataContainer.characters)")
             self.ui?.update(heroes: characterDataContainer.characters)
         }
