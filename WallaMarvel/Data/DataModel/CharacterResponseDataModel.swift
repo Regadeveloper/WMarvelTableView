@@ -1,5 +1,3 @@
-import Foundation
-
 struct CharacterDataContainer: Decodable {
     let count: Int
     let limit: Int

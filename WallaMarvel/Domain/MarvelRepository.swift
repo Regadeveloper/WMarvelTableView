@@ -1,5 +1,3 @@
-import Foundation
-
 protocol MarvelRepositoryProtocol {
     func getHeroes(offset: Int, completionBlock: @escaping (CharacterDataContainer) -> Void)
 }

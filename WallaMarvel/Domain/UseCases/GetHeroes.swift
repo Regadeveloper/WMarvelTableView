@@ -1,5 +1,3 @@
-import Foundation
-
 protocol GetHeroesUseCaseProtocol {
     func execute(offset: Int, completionBlock: @escaping (CharacterDataContainer) -> Void)
 }
