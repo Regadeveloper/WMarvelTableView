@@ -135,7 +135,7 @@
 				1A0E3A982862F7E200132FCB /* AppDelegate.swift */,
 				1A0E3A9A2862F7E200132FCB /* SceneDelegate.swift */,
 				1A821EC42862FD470024D397 /* List Heroes */,
-				1A821EC52862FD500024D397 /* Detail Heroe */,
+				1A821EC52862FD500024D397 /* Detail Hero */,
 				1A821EC62862FD650024D397 /* Domain */,
 				1A821EC72862FD6E0024D397 /* Data */,
 				1A0E3AA12862F7E300132FCB /* Assets.xcassets */,
@@ -174,11 +174,11 @@
 			path = "List Heroes";
 			sourceTree = "<group>";
 		};
-		1A821EC52862FD500024D397 /* Detail Heroe */ = {
+		1A821EC52862FD500024D397 /* Detail Hero */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "Detail Heroe";
+			path = "Detail Hero";
 			sourceTree = "<group>";
 		};
 		1A821EC62862FD650024D397 /* Domain */ = {
