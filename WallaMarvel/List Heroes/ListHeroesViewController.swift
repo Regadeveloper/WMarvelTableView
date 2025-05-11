@@ -33,11 +33,11 @@ extension ListHeroesViewController: ListHeroesUI {
 
 extension ListHeroesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let presenter = ListHeroesPresenter()
-        let listHeroesViewController = ListHeroesViewController()
-        listHeroesViewController.presenter = presenter
-        
-        navigationController?.pushViewController(listHeroesViewController, animated: true)
+        let presenter = DetailHeroPresenter()
+        let detailHeroViewController = DetailHeroViewController(name: listHeroesProvider?.heroes[indexPath.row].name ?? "")
+        detailHeroViewController.presenter = presenter
+
+        navigationController?.pushViewController(detailHeroViewController, animated: true)
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
