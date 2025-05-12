@@ -8,6 +8,9 @@ class WallaMarvelUITestsLaunchTests: XCTestCase {
 
     override func setUpWithError() throws {
         continueAfterFailure = false
+        let app = XCUIApplication()
+        app.launchArguments.append("UI-TESTING")
+
     }
 
     func testLaunch() throws {
