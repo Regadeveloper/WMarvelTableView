@@ -50,5 +50,6 @@ final class ListHeroesTableViewCell: UITableViewCell {
     func configure(model: CharacterDataModel) {
         heroeImageView.kf.setImage(with: URL(string: model.thumbnail.path + "/portrait_small." + model.thumbnail.extension))
         heroeName.text = model.name
+        self.accessibilityIdentifier = ("\(model.name) Cell")
     }
 }

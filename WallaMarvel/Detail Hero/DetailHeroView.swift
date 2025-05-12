@@ -21,6 +21,7 @@ final class DetailHeroView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 42)
+        label.tintColor = .black
         return label
     }()
 
@@ -28,6 +29,7 @@ final class DetailHeroView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 16)
+        label.tintColor = .black
         label.numberOfLines = 0
         return label
     }()
@@ -61,7 +63,7 @@ final class DetailHeroView: UIView {
     }
 
     private func setup() {
-        backgroundColor = .white
+        backgroundColor = .systemBackground
         titleStackView.addArrangedSubview(heroeImageView)
         titleStackView.addArrangedSubview(nameLabel)
         contentStackView.addArrangedSubview(titleStackView)
@@ -89,5 +91,6 @@ final class DetailHeroView: UIView {
         )
         nameLabel.text = model.name
         descriptionLabel.text = model.description
+        self.accessibilityIdentifier = ("\(model.name) Detail Hero View")
     }
 }

@@ -23,9 +23,9 @@ final class DetailHeroViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.getHero(name: name)
         detailHeroProvider = DetailHeroAdapter(view: mainView)
         presenter?.ui = self
+        presenter?.getHero(name: name)
     }
 }
 

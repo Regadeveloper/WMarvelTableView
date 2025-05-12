@@ -15,9 +15,9 @@ final class ListHeroesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         listHeroesProvider = ListHeroesAdapter(tableView: mainView.heroesTableView)
-        presenter?.getHeroes(offset: 0)
         presenter?.ui = self
-        
+        presenter?.getHeroes(offset: 0)
+
         title = presenter?.screenTitle()
         
         mainView.heroesTableView.delegate = self

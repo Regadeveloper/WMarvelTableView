@@ -12,7 +12,7 @@
 		1A0E3A9D2862F7E200132FCB /* ListHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E3A9C2862F7E200132FCB /* ListHeroesViewController.swift */; };
 		1A0E3AA22862F7E300132FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0E3AA12862F7E300132FCB /* Assets.xcassets */; };
 		1A0E3AA52862F7E300132FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A0E3AA32862F7E300132FCB /* LaunchScreen.storyboard */; };
-		1A0E3AB02862F7E300132FCB /* WallaMarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E3AAF2862F7E300132FCB /* WallaMarvelTests.swift */; };
+		1A0E3AB02862F7E300132FCB /* ListHeroesPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E3AAF2862F7E300132FCB /* ListHeroesPresenterTest.swift */; };
 		1A0E3ABA2862F7E300132FCB /* WallaMarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E3AB92862F7E300132FCB /* WallaMarvelUITests.swift */; };
 		1A0E3ABC2862F7E300132FCB /* WallaMarvelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E3ABB2862F7E300132FCB /* WallaMarvelUITestsLaunchTests.swift */; };
 		1A3B7326286ADD1E007BF626 /* ListHeroesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B7325286ADD1E007BF626 /* ListHeroesTableView.swift */; };
@@ -43,6 +43,11 @@
 		DE7496B42DCF515A0022F9EF /* GetHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7496B32DCF51570022F9EF /* GetHero.swift */; };
 		DE7496B62DCF51890022F9EF /* DetailHeroPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7496B52DCF51830022F9EF /* DetailHeroPresenter.swift */; };
 		DE7496B82DCF543D0022F9EF /* DetailHeroAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7496B72DCF54380022F9EF /* DetailHeroAdapter.swift */; };
+		DEEF533F2DD26356007452D9 /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF533E2DD26350007452D9 /* MockApiClient.swift */; };
+		DEEF53412DD264ED007452D9 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF53402DD264E8007452D9 /* DependencyContainer.swift */; };
+		DEEF53472DD26629007452D9 /* DetailHeroABomb.json in Resources */ = {isa = PBXBuildFile; fileRef = DEEF53462DD26629007452D9 /* DetailHeroABomb.json */; };
+		DEEF53482DD26629007452D9 /* DetailHeroABomb.json in Resources */ = {isa = PBXBuildFile; fileRef = DEEF53462DD26629007452D9 /* DetailHeroABomb.json */; };
+		DEEF53492DD26629007452D9 /* DetailHeroABomb.json in Resources */ = {isa = PBXBuildFile; fileRef = DEEF53462DD26629007452D9 /* DetailHeroABomb.json */; };
 		DEFDC63F2DCE977F00881EA3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DEFDC63E2DCE977F00881EA3 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +77,7 @@
 		1A0E3AA42862F7E300132FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A0E3AA62862F7E300132FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A0E3AAB2862F7E300132FCB /* WallaMarvelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WallaMarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A0E3AAF2862F7E300132FCB /* WallaMarvelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallaMarvelTests.swift; sourceTree = "<group>"; };
+		1A0E3AAF2862F7E300132FCB /* ListHeroesPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeroesPresenterTest.swift; sourceTree = "<group>"; };
 		1A0E3AB52862F7E300132FCB /* WallaMarvelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WallaMarvelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A0E3AB92862F7E300132FCB /* WallaMarvelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallaMarvelUITests.swift; sourceTree = "<group>"; };
 		1A0E3ABB2862F7E300132FCB /* WallaMarvelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallaMarvelUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -98,6 +103,9 @@
 		DE7496B32DCF51570022F9EF /* GetHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHero.swift; sourceTree = "<group>"; };
 		DE7496B52DCF51830022F9EF /* DetailHeroPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeroPresenter.swift; sourceTree = "<group>"; };
 		DE7496B72DCF54380022F9EF /* DetailHeroAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeroAdapter.swift; sourceTree = "<group>"; };
+		DEEF533E2DD26350007452D9 /* MockApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiClient.swift; sourceTree = "<group>"; };
+		DEEF53402DD264E8007452D9 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		DEEF53462DD26629007452D9 /* DetailHeroABomb.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DetailHeroABomb.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +158,7 @@
 		1A0E3A972862F7E200132FCB /* WallaMarvel */ = {
 			isa = PBXGroup;
 			children = (
+				DEEF53402DD264E8007452D9 /* DependencyContainer.swift */,
 				1A0E3A982862F7E200132FCB /* AppDelegate.swift */,
 				1A0E3A9A2862F7E200132FCB /* SceneDelegate.swift */,
 				1A821EC42862FD470024D397 /* List Heroes */,
@@ -166,7 +175,7 @@
 		1A0E3AAE2862F7E300132FCB /* WallaMarvelTests */ = {
 			isa = PBXGroup;
 			children = (
-				1A0E3AAF2862F7E300132FCB /* WallaMarvelTests.swift */,
+				1A0E3AAF2862F7E300132FCB /* ListHeroesPresenterTest.swift */,
 			);
 			path = WallaMarvelTests;
 			sourceTree = "<group>";
@@ -215,6 +224,7 @@
 		1A821EC72862FD6E0024D397 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DEEF533D2DD26349007452D9 /* Mocks */,
 				1A821ED5286305590024D397 /* MarvelDataSource.swift */,
 				1A821EC82862FE3C0024D397 /* APIClient.swift */,
 				1A821ED2286302D40024D397 /* DataModel */,
@@ -263,11 +273,20 @@
 		DE7496982DCF312A0022F9EF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DEEF53462DD26629007452D9 /* DetailHeroABomb.json */,
 				DE7496AB2DCF4DFB0022F9EF /* DetailHeroHulk.json */,
 				DE7496992DCF32580022F9EF /* FilteredPageHeroes.json */,
 				DE74969A2DCF32580022F9EF /* PageOneHeroes.json */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		DEEF533D2DD26349007452D9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DEEF533E2DD26350007452D9 /* MockApiClient.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +400,7 @@
 				DE74969D2DCF32580022F9EF /* PageOneHeroes.json in Resources */,
 				DE74969E2DCF32580022F9EF /* FilteredPageHeroes.json in Resources */,
 				1A0E3AA52862F7E300132FCB /* LaunchScreen.storyboard in Resources */,
+				DEEF53482DD26629007452D9 /* DetailHeroABomb.json in Resources */,
 				1A0E3AA22862F7E300132FCB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +411,7 @@
 			files = (
 				DE74969B2DCF32580022F9EF /* PageOneHeroes.json in Resources */,
 				DE74969C2DCF32580022F9EF /* FilteredPageHeroes.json in Resources */,
+				DEEF53492DD26629007452D9 /* DetailHeroABomb.json in Resources */,
 				DE7496AE2DCF4DFB0022F9EF /* DetailHeroHulk.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +422,7 @@
 			files = (
 				DE74969F2DCF32580022F9EF /* PageOneHeroes.json in Resources */,
 				DE7496A02DCF32580022F9EF /* FilteredPageHeroes.json in Resources */,
+				DEEF53472DD26629007452D9 /* DetailHeroABomb.json in Resources */,
 				DE7496AC2DCF4DFB0022F9EF /* DetailHeroHulk.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A821ED82863081A0024D397 /* MarvelRepository.swift in Sources */,
+				DEEF533F2DD26356007452D9 /* MockApiClient.swift in Sources */,
 				DE7496A62DCF4A710022F9EF /* DetailHeroViewController.swift in Sources */,
 				1A0E3A9D2862F7E200132FCB /* ListHeroesViewController.swift in Sources */,
 				1AC0347F2863214900E93178 /* GetHeroes.swift in Sources */,
@@ -433,6 +456,7 @@
 				1A821ED4286302EC0024D397 /* CharacterResponseDataModel.swift in Sources */,
 				DE7496B02DCF4F0C0022F9EF /* CharacterDetailResponseDataModel.swift in Sources */,
 				DE7496B82DCF543D0022F9EF /* DetailHeroAdapter.swift in Sources */,
+				DEEF53412DD264ED007452D9 /* DependencyContainer.swift in Sources */,
 				1A821EC92862FE3C0024D397 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,7 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A0E3AB02862F7E300132FCB /* WallaMarvelTests.swift in Sources */,
+				1A0E3AB02862F7E300132FCB /* ListHeroesPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

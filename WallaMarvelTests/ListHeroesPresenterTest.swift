@@ -1,7 +1,7 @@
 import XCTest
 @testable import WallaMarvel
 
-class WallaMarvelTests: XCTestCase {
+class ListHeroesPresenterTest: XCTestCase {
     static let DEFAULTCHARACTER = CharacterDataModel(id: 1, name: "Name", thumbnail: Thumbnail(path: "path", extension: "jpg"))
 
 
@@ -21,7 +21,7 @@ class WallaMarvelTests: XCTestCase {
                 count: 1,
                 limit: 1,
                 offset: 0,
-                characters: [WallaMarvelTests.DEFAULTCHARACTER]
+                characters: [DEFAULTCHARACTER]
              ))
         }
     }
