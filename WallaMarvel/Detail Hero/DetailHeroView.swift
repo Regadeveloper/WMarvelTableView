@@ -83,11 +83,9 @@ final class DetailHeroView: UIView {
     }
 
     func configure(model: CharacterDetailDataModel) {
-        let processor = RoundCornerImageProcessor(cornerRadius: Attributes.imageSize/2)
         heroeImageView.kf.setImage(
             with: URL(string: model.thumbnail.path + "/portrait_medium." + model.thumbnail.extension),
-            placeholder: UIImage(systemName: "photo"),
-            options: [.processor(processor)]
+            placeholder: UIImage(systemName: "photo")
         )
         nameLabel.text = model.name
         descriptionLabel.text = model.description
