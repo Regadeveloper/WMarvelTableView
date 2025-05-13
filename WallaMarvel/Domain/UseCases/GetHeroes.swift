@@ -1,5 +1,5 @@
 protocol GetHeroesUseCaseProtocol {
-    func execute(offset: Int, completionBlock: @escaping (CharacterDataContainer) -> Void)
+    func execute(offset: Int, keyword: String?, completionBlock: @escaping (CharacterDataContainer) -> Void)
 }
 
 struct GetHeroes: GetHeroesUseCaseProtocol {
@@ -9,7 +9,7 @@ struct GetHeroes: GetHeroesUseCaseProtocol {
         self.repository = repository
     }
     
-    func execute(offset: Int, completionBlock: @escaping (CharacterDataContainer) -> Void) {
-        repository.getHeroes(offset: offset, completionBlock: completionBlock)
+    func execute(offset: Int, keyword: String?, completionBlock: @escaping (CharacterDataContainer) -> Void) {
+        repository.getHeroes(offset: offset, keyword: keyword, completionBlock: completionBlock)
     }
 }

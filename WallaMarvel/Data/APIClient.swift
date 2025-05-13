@@ -1,7 +1,7 @@
 import Foundation
 
 protocol APIClientProtocol {
-    func getHeroes(offset: Int, completionBlock: @escaping (CharacterDataContainer) -> Void)
+    func getHeroes(offset: Int, keyword: String?, completionBlock: @escaping (CharacterDataContainer) -> Void)
     func getHero(name: String, completionBlock: @escaping (CharacterDetailDataContainer) -> Void)
 }
 
@@ -17,13 +17,18 @@ final class APIClient: APIClientProtocol {
 
     init() { }
     
-    func getHeroes(offset: Int, completionBlock: @escaping (CharacterDataContainer) -> Void) {
+    func getHeroes(offset: Int, keyword: String?, completionBlock: @escaping (CharacterDataContainer) -> Void) {
+        let keyword: String? = "Atom"
 
         let authParamters = getAuthParameters()
         let pageParameters: [String: String] = ["offset": "\(offset)",
                                                 "limit": "20"]
 
-        let parameters = authParamters.merging(pageParameters) { (_, new) in new }
+        var parameters = authParamters.merging(pageParameters) { (_, new) in new }
+
+        if let keyword = keyword, !keyword.isEmpty {
+            parameters["nameStartsWith"] = keyword
+        }
 
 
         var urlComponent = URLComponents(string: Endpoints.characters)

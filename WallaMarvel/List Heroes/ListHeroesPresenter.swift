@@ -5,6 +5,7 @@ protocol ListHeroesPresenterProtocol: AnyObject {
 }
 
 protocol ListHeroesUI: AnyObject {
+    var keyword: String? { get set }
     func update(heroes: [CharacterDataModel])
 }
 
@@ -23,7 +24,7 @@ final class ListHeroesPresenter: ListHeroesPresenterProtocol {
     // MARK: UseCases
     
     func getHeroes(offset: Int) {
-        getHeroesUseCase.execute(offset: offset) { characterDataContainer in
+        getHeroesUseCase.execute(offset: offset, keyword: ui?.keyword) { characterDataContainer in
             print("Characters \(characterDataContainer.characters)")
             self.ui?.update(heroes: characterDataContainer.characters)
         }

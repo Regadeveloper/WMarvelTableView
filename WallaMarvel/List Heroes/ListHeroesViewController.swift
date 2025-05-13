@@ -25,6 +25,15 @@ final class ListHeroesViewController: UIViewController {
 }
 
 extension ListHeroesViewController: ListHeroesUI {
+    var keyword: String? {
+        get {
+            listHeroesProvider?.keyword
+        }
+        set {
+            listHeroesProvider?.keyword = newValue
+        }
+    }
+
     func update(heroes: [CharacterDataModel]) {
         isLoading = false
         listHeroesProvider?.heroes += heroes

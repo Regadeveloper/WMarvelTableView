@@ -1,7 +1,7 @@
 import Foundation
 
 public final class MockAPIClient: APIClientProtocol {
-    func getHeroes(offset: Int, completionBlock: @escaping (CharacterDataContainer) -> Void) {
+    func getHeroes(offset: Int, keyword: String?, completionBlock: @escaping (CharacterDataContainer) -> Void) {
         if let data = loadMockData(named: "PageOneHeroes") {
             let model = try! JSONDecoder().decode(CharacterDataContainer.self, from: data)
             completionBlock(model)

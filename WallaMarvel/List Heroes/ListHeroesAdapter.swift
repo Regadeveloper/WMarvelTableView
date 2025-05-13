@@ -1,6 +1,7 @@
 import UIKit
 
 final class ListHeroesAdapter: NSObject, UITableViewDataSource {
+    var keyword: String?
     var heroes: [CharacterDataModel] {
         didSet {
             DispatchQueue.main.async {
@@ -11,9 +12,10 @@ final class ListHeroesAdapter: NSObject, UITableViewDataSource {
     
     private let tableView: UITableView
     
-    init(tableView: UITableView, heroes: [CharacterDataModel] = []) {
+    init(tableView: UITableView, heroes: [CharacterDataModel] = [], keyword: String = "") {
         self.tableView = tableView
         self.heroes = heroes
+        self.keyword = keyword
         super.init()
         self.tableView.dataSource = self
     }
