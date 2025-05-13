@@ -18,8 +18,6 @@ final class APIClient: APIClientProtocol {
     init() { }
     
     func getHeroes(offset: Int, keyword: String?, completionBlock: @escaping (CharacterDataContainer) -> Void) {
-        let keyword: String? = "Atom"
-
         let authParamters = getAuthParameters()
         let pageParameters: [String: String] = ["offset": "\(offset)",
                                                 "limit": "20"]
@@ -41,10 +39,19 @@ final class APIClient: APIClientProtocol {
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let dataModel = try? JSONDecoder().decode(CharacterDataContainer.self, from: data!) else {
                 print("El endpoint no funciona.")
-                if let data = self.loadBackupData(named: "PageOneHeroes") {
-                    let model = try! JSONDecoder().decode(CharacterDataContainer.self, from: data)
-                    completionBlock(model)
-                    print(model)
+                if let keyword = keyword, !keyword.isEmpty {
+                    print(keyword)
+                    if let data = self.loadBackupData(named: "FilteredPageHeroes") {
+                        let model = try! JSONDecoder().decode(CharacterDataContainer.self, from: data)
+                        completionBlock(model)
+                        print(model)
+                    }
+                } else {
+                    if let data = self.loadBackupData(named: "PageOneHeroes") {
+                        let model = try! JSONDecoder().decode(CharacterDataContainer.self, from: data)
+                        completionBlock(model)
+                        print(model)
+                    }
                 }
                 return
             }

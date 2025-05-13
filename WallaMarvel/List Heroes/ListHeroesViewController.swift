@@ -46,6 +46,11 @@ extension ListHeroesViewController: ListHeroesUI {
         isLoading = false
         listHeroesProvider?.heroes += heroes
     }
+
+    func set(heroes: [CharacterDataModel]) {
+        isLoading = false
+        listHeroesProvider?.heroes = heroes
+    }
 }
 
 extension ListHeroesViewController: UITableViewDelegate {
@@ -62,6 +67,7 @@ extension ListHeroesViewController: UITableViewDelegate {
             return
         }
         let lastItem = listHeroesProvider?.heroes.count ?? 0
+        guard let total = presenter?.total, lastItem < total else { return }
         let lastItemRow = lastItem == 0 ? 1 : lastItem - 1
         if indexPath.row == lastItemRow {
             isLoading = true

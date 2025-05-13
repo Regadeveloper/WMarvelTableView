@@ -18,4 +18,8 @@ class WallaMarvelUITests: XCTestCase {
         let heroDetailDescription = app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "Rick Jones")).firstMatch
         XCTAssertTrue(heroDetailDescription.waitForExistence(timeout: 2))
     }
+
+    func testSearchBarLaunches() {
+        
+    }
 }

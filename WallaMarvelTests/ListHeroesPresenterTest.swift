@@ -16,20 +16,25 @@ class ListHeroesPresenterTest: XCTestCase {
     }
 
     struct MockGetHeroesUseCase: GetHeroesUseCaseProtocol {
-        func execute(offset: Int, completionBlock: @escaping (CharacterDataContainer) -> Void) {
+        func execute(offset: Int, keyword: String?, completionBlock: @escaping (CharacterDataContainer) -> Void) {
              completionBlock(CharacterDataContainer(
                 count: 1,
                 limit: 1,
                 offset: 0,
+                total: 1,
                 characters: [DEFAULTCHARACTER]
              ))
         }
     }
 
     class MockListHeroesUI: ListHeroesUI {
+        var keyword: String?
         var heroes: [CharacterDataModel] = []
 
         func update(heroes: [CharacterDataModel]) {
+            self.heroes = heroes
+        }
+        func set(heroes: [WallaMarvel.CharacterDataModel]) {
             self.heroes = heroes
         }
     }
