@@ -40,7 +40,8 @@ final class ListHeroesTableViewCell: UITableViewCell {
             heroeImageView.topAnchor.constraint(equalTo: topAnchor, constant: 12),
             heroeImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
             heroeImageView.widthAnchor.constraint(equalToConstant: 80),
-
+            heroeImageView.heightAnchor.constraint(greaterThanOrEqualToConstant: 80),
+            
             heroeName.leadingAnchor.constraint(equalTo: heroeImageView.trailingAnchor, constant: 12),
             heroeName.topAnchor.constraint(equalTo: heroeImageView.topAnchor, constant: 8),
         ])
