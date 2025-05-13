@@ -2,11 +2,18 @@ import UIKit
 
 final class ListHeroesViewController: UIViewController {
     var mainView: ListHeroesView { return view as! ListHeroesView  }
-    
+
+    let searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "Introduce el nombre del héroe"
+        return searchController
+    }()
+
     var presenter: ListHeroesPresenterProtocol?
     var listHeroesProvider: ListHeroesAdapter?
 
     var isLoading: Bool = true
+    private var searchWorkItem: DispatchWorkItem?
 
     override func loadView() {
         view = ListHeroesView()
@@ -17,7 +24,8 @@ final class ListHeroesViewController: UIViewController {
         listHeroesProvider = ListHeroesAdapter(tableView: mainView.heroesTableView)
         presenter?.ui = self
         presenter?.getHeroes(offset: 0)
-
+        setSearchView()
+        navigationItem.searchController = searchController
         title = presenter?.screenTitle()
         
         mainView.heroesTableView.delegate = self
@@ -59,6 +67,25 @@ extension ListHeroesViewController: UITableViewDelegate {
             isLoading = true
             presenter?.getHeroes(offset: lastItem)
         }
+    }
+}
+
+extension ListHeroesViewController: UISearchResultsUpdating {
+    func setSearchView() {
+        searchController.searchResultsUpdater = self
+    }
+
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let keyword = searchController.searchBar.text else { return }
+        searchWorkItem?.cancel()
+        listHeroesProvider?.keyword = keyword
+
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.presenter?.getHeroes(offset: 0)
+        }
+        searchWorkItem = workItem
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: workItem)
     }
 }
 

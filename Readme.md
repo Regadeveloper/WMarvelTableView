@@ -17,6 +17,12 @@ As a fallback, I included **local JSON files** to simulate the API responses if 
 
 I chose **Hulk** as the primary character for real API calls simply out of personal preference—he's a more complete example, with the API returning more data. If the app were to display every value from the response, Hulk provides one of the most detailed entries.
 
+## 🔍 SearchBar
+
+I implemented a `UISearchController` because it's the easiest way to add a searchbar without having to worry about logic nor constraints. 
+For the implementation I `DispatchWorkItem` which I had never used before to allow some buffer between the user input and actually doing the search. This way we avoid multiple updates to the view, multiple calls to the API and, in general, a bad experience for the user and the server.
+I put a delay of 0.5 because it allows some margin for the user to write but not too long that the user has to wait after finishing.
+
 ## ✅ Testing
 
 ### 🧪 Unit Testing
