@@ -48,3 +48,7 @@ This test ensures:
 - For UI tests, I created a `MockApiClient`:
   - Avoids using real network calls (which would cause flakiness, waste credits from the API, and complicate CI/CD).
   - In these tests, I used **A-Bomb (HAS)** instead of Hulk in the detail view, since he's the first character in the list with a description. This creates a more realistic test by ensuring the detail view matches the tapped cell—just as it would in a functioning app.
+
+ ## 🧙‍♂️ Extra Feature
+
+ I've added search by url to products related to the character. This could be expanded when adding comics, series or stories to the view. This could work as an MVP.
