@@ -17,12 +17,11 @@ final class DetailHeroView: UIView {
         return stack
     }()
 
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 42)
-        label.tintColor = .black
-        return label
+    private let nameLabel: UITextView = {
+        let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.isScrollEnabled = false
+        return textView
     }()
 
     private let descriptionLabel: UILabel = {
@@ -87,8 +86,19 @@ final class DetailHeroView: UIView {
             with: URL(string: model.thumbnail.path + "/portrait_medium." + model.thumbnail.extension),
             placeholder: UIImage(systemName: "photo")
         )
-        nameLabel.text = model.name
+        configureURL(model: model)
         descriptionLabel.text = model.description
         self.accessibilityIdentifier = ("\(model.name) Detail Hero View")
+    }
+
+    func configureURL(model: CharacterDetailDataModel) {
+        let link = "https://es.wallapop.com/app/search?keywords=\(model.name)"
+        let attributes: [NSAttributedString.Key: Any] = [
+            .link: link,
+            .font: UIFont.boldSystemFont(ofSize: 42),
+            .foregroundColor: UIColor.link
+        ]
+        let nameURL = NSAttributedString(string: model.name, attributes: attributes)
+        nameLabel.attributedText = nameURL
     }
 }
