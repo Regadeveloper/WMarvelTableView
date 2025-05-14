@@ -7,6 +7,11 @@ final class DetailHeroAdapter: NSObject {
         }
     }
 
+    var comics: [ComicItem] {
+        guard let hero = hero else { return [] }
+        return hero.comics.items
+    }
+
     private let view: DetailHeroView
 
     init(view: DetailHeroView, hero: CharacterDetailDataModel? = nil) {

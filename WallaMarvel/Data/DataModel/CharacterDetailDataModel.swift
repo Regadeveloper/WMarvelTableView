@@ -3,4 +3,5 @@ struct CharacterDetailDataModel: Decodable {
     let name: String
     let description: String
     let thumbnail: Thumbnail
+    let comics: Comic
 }

@@ -49,6 +49,11 @@ This test ensures:
   - Avoids using real network calls (which would cause flakiness, waste credits from the API, and complicate CI/CD).
   - In these tests, I used **A-Bomb (HAS)** instead of Hulk in the detail view, since he's the first character in the list with a description. This creates a more realistic test by ensuring the detail view matches the tapped cell—just as it would in a functioning app.
 
- ## 🧙‍♂️ Extra Feature
+## 🧙‍♂️ Extra Feature
 
- I've added search by url to products related to the character. This could be expanded when adding comics, series or stories to the view. This could work as an MVP.
+I've added search by url to products related to the character. This could be expanded when adding comics, series or stories to the view. This could work as an MVP.
+I thought about adding the covers from the comics instead of just adding a text but that would be moving goalposts in my opinion.
+
+## 🐛 Debug
+
+There are some issues which I think are derivative of the API not working properly. Sometimes the view stays white while loading content, this is because there's no response from the call yet. You can wait or you can try to take an action to make another call like writing on the searchbar for the listing or navigating back and forth from the detail to the list.

@@ -27,6 +27,7 @@
 		1A821ED82863081A0024D397 /* MarvelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A821ED72863081A0024D397 /* MarvelRepository.swift */; };
 		1A821EDA2863096C0024D397 /* ListHeroesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A821ED92863096C0024D397 /* ListHeroesPresenter.swift */; };
 		1AC0347F2863214900E93178 /* GetHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC0347E2863214900E93178 /* GetHeroes.swift */; };
+		DE13983D2DD5030A008BA2F2 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE13983C2DD50303008BA2F2 /* Comic.swift */; };
 		DE74969B2DCF32580022F9EF /* PageOneHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE74969A2DCF32580022F9EF /* PageOneHeroes.json */; };
 		DE74969C2DCF32580022F9EF /* FilteredPageHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE7496992DCF32580022F9EF /* FilteredPageHeroes.json */; };
 		DE74969D2DCF32580022F9EF /* PageOneHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE74969A2DCF32580022F9EF /* PageOneHeroes.json */; };
@@ -93,6 +94,7 @@
 		1A821ED72863081A0024D397 /* MarvelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRepository.swift; sourceTree = "<group>"; };
 		1A821ED92863096C0024D397 /* ListHeroesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeroesPresenter.swift; sourceTree = "<group>"; };
 		1AC0347E2863214900E93178 /* GetHeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroes.swift; sourceTree = "<group>"; };
+		DE13983C2DD50303008BA2F2 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		DE7496992DCF32580022F9EF /* FilteredPageHeroes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FilteredPageHeroes.json; sourceTree = "<group>"; };
 		DE74969A2DCF32580022F9EF /* PageOneHeroes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PageOneHeroes.json; sourceTree = "<group>"; };
 		DE7496A32DCF48750022F9EF /* DetailHeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeroView.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		1A821ED2286302D40024D397 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				DE13983C2DD50303008BA2F2 /* Comic.swift */,
 				DE7496B12DCF4F750022F9EF /* CharacterDetailDataModel.swift */,
 				DE7496AF2DCF4F050022F9EF /* CharacterDetailResponseDataModel.swift */,
 				1A821ED3286302EC0024D397 /* CharacterResponseDataModel.swift */,
@@ -451,6 +454,7 @@
 				DE7496A42DCF487B0022F9EF /* DetailHeroView.swift in Sources */,
 				DE7496B62DCF51890022F9EF /* DetailHeroPresenter.swift in Sources */,
 				DE7496B42DCF515A0022F9EF /* GetHero.swift in Sources */,
+				DE13983D2DD5030A008BA2F2 /* Comic.swift in Sources */,
 				1A3B7326286ADD1E007BF626 /* ListHeroesTableView.swift in Sources */,
 				1A3B7328286ADEE6007BF626 /* ListHeroesTableViewCell.swift in Sources */,
 				1A821ED4286302EC0024D397 /* CharacterResponseDataModel.swift in Sources */,

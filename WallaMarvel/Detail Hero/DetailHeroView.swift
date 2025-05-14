@@ -9,18 +9,11 @@ final class DetailHeroView: UIView {
         static let contentSpacing: CGFloat = 16
     }
 
-    private let contentStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.spacing = Attributes.contentSpacing
-        return stack
-    }()
-
     private let nameLabel: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.isScrollEnabled = false
+        textView.dataDetectorTypes = [.link]
         return textView
     }()
 
@@ -42,6 +35,13 @@ final class DetailHeroView: UIView {
         return imageView
     }()
 
+    private let exampleComicLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = true
+        return label
+    }()
+
 
     private let titleStackView: UIStackView = {
         let stackView = UIStackView()
@@ -51,6 +51,15 @@ final class DetailHeroView: UIView {
         stackView.alignment = .leading
         return stackView
     }()
+
+    private let contentStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = Attributes.contentSpacing
+        return stack
+    }()
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,6 +76,7 @@ final class DetailHeroView: UIView {
         titleStackView.addArrangedSubview(nameLabel)
         contentStackView.addArrangedSubview(titleStackView)
         contentStackView.addArrangedSubview(descriptionLabel)
+        contentStackView.addArrangedSubview(exampleComicLabel)
 
         addSubview(contentStackView)
 
@@ -86,12 +96,13 @@ final class DetailHeroView: UIView {
             with: URL(string: model.thumbnail.path + "/portrait_medium." + model.thumbnail.extension),
             placeholder: UIImage(systemName: "photo")
         )
-        configureURL(model: model)
+        configureName(model: model)
+        configureComic(model: model.comics.items)
         descriptionLabel.text = model.description
         self.accessibilityIdentifier = ("\(model.name) Detail Hero View")
     }
 
-    func configureURL(model: CharacterDetailDataModel) {
+    func configureName(model: CharacterDetailDataModel) {
         let link = "https://es.wallapop.com/app/search?keywords=\(model.name)"
         let attributes: [NSAttributedString.Key: Any] = [
             .link: link,
@@ -101,4 +112,37 @@ final class DetailHeroView: UIView {
         let nameURL = NSAttributedString(string: model.name, attributes: attributes)
         nameLabel.attributedText = nameURL
     }
+
+    func configureComic(model: [ComicItem]) {
+        guard let comicName = model.randomElement()?.name else {
+            exampleComicLabel.text = "No comic available"
+            return
+        }
+
+        let prefix = "Random Comic: "
+        let fullText = prefix + comicName
+        let link = "https://es.wallapop.com/app/search?keywords=\(comicName)"
+
+        let attributedText = NSMutableAttributedString(string: fullText)
+
+        attributedText.addAttributes([
+            .foregroundColor: UIColor.systemBlue,
+            .underlineStyle: NSUnderlineStyle.single.rawValue
+        ], range: NSRange(location: prefix.count, length: comicName.count))
+
+        exampleComicLabel.attributedText = attributedText
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapComicLabel))
+        exampleComicLabel.addGestureRecognizer(tap)
+        exampleComicLabel.accessibilityHint = link
+    }
+
+
+    @objc private func didTapComicLabel() {
+        guard let urlString = exampleComicLabel.accessibilityHint,
+              let url = URL(string: urlString) else { return }
+
+        UIApplication.shared.open(url)
+    }
+
 }
